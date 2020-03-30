@@ -1,0 +1,95 @@
+
+(rules PCB SharpMIDI-oldparts-singleout-v1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 4382)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clear 160.2)
+    (clear 100.0 (type smd_to_turn_gap))
+    (clear 40.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_700:400_um"
+    (shape
+      (circle F.Cu 700.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 700.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_700:400_um" "Via[0-1]_700:400_um" default
+  )
+  (via 
+    "Via[0-1]_700:400_um-kicad_default" "Via[0-1]_700:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_700:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_700:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND +5V /DB0 /DB1 /DB2 /DB3 /DB4 /DB5
+    /DB6 /DB7 /IDDIR /AB10 /AB20 /AB16 /AB18 /AB7
+    /AB8 /AB6 /AB5 /AB11 /AB12 /AB13 /AB14 /AB15
+    /AB17 /AB19 /AB22 /AB21 /IACK2 /IACK4 /AB23 /A
+    /IRQ4 /DTACK /IRQ2 /AS /LDS /RW /B /C
+    /10MHz /EXRESET /AB4 /AB3 /AB2 /AB1 "Net-(J1-PadA48)" "Net-(J1-PadA47)"
+    "Net-(J1-PadA46)" "Net-(J1-PadA45)" "Net-(J1-PadA44)" "Net-(J1-PadA43)" "Net-(J1-PadA42)" "Net-(J1-PadA40)" "Net-(J1-PadA39)" "Net-(J1-PadA38)"
+    "Net-(J1-PadA35)" "Net-(J1-PadA34)" "Net-(J1-PadA33)" "Net-(J1-PadA32)" "Net-(J1-PadA31)" "Net-(J1-PadA29)" "Net-(J1-PadA23)" "Net-(J1-PadA22)"
+    "Net-(J1-PadA20)" "Net-(J1-PadA19)" "Net-(J1-PadA18)" "Net-(J1-PadA17)" "Net-(J1-PadA16)" "Net-(J1-PadA15)" "Net-(J1-PadA14)" "Net-(J1-PadA13)"
+    "Net-(J1-PadA2)" "Net-(J1-PadB48)" "Net-(J1-PadB47)" "Net-(J1-PadB46)" "Net-(J1-PadB40)" "Net-(J1-PadB39)" "Net-(J1-PadB38)" "Net-(J1-PadB37)"
+    "Net-(J1-PadB36)" "Net-(J1-PadB35)" "Net-(J1-PadB34)" "Net-(J1-PadB33)" "Net-(J1-PadB32)" "Net-(J1-PadB31)" /AB9 "Net-(J1-PadB4)"
+    "Net-(J1-PadB2)" "Net-(R5-Pad2)" "Net-(R4-Pad2)" "Net-(JP2-Pad1)" "Net-(R1-Pad2)" "Net-(R9-Pad2)" "Net-(RN1-Pad2)" "Net-(RN1-Pad3)"
+    "Net-(RN1-Pad4)" "Net-(RN1-Pad5)" "Net-(RN1-Pad6)" "Net-(RN1-Pad7)" "Net-(RN1-Pad8)" "Net-(RN1-Pad9)" "Net-(U1-Pad11)" "Net-(U6-Pad2)"
+    "Net-(U1-Pad12)" "Net-(U6-Pad3)" "Net-(U1-Pad13)" "Net-(U10-Pad6)" "Net-(U1-Pad14)" "Net-(U10-Pad9)" "Net-(U1-Pad15)" "Net-(U14-Pad13)"
+    "Net-(U1-Pad16)" "Net-(U6-Pad7)" "Net-(U1-Pad17)" "Net-(U6-Pad8)" "Net-(U1-Pad18)" "Net-(U6-Pad9)" "Net-(U15-Pad4)" "Net-(U15-Pad7)"
+    "Net-(U15-Pad9)" "Net-(U6-Pad32)" "Net-(U6-Pad33)" "Net-(U6-Pad34)" /4MHz "Net-(U1-Pad19)" "Net-(U2-Pad6)" "Net-(U3-Pad9)"
+    "Net-(U2-Pad5)" "Net-(U3-Pad7)" "Net-(U15-Pad12)" "Net-(U15-Pad1)" "Net-(U7-Pad5)" "Net-(JP1-Pad3)" "Net-(U5-Pad1)" "Net-(U11-Pad1)"
+    "Net-(U5-Pad13)" "Net-(JP1-Pad2)" "Net-(U4-Pad8)" "Net-(U4-Pad6)" "Net-(U11-Pad9)" "Net-(U10-Pad13)" "Net-(U10-Pad5)" "Net-(U10-Pad11)"
+    "Net-(U10-Pad10)" "Net-(U10-Pad3)" "Net-(U10-Pad8)" "Net-(U10-Pad1)" "Net-(U11-Pad8)" "Net-(U11-Pad12)" "Net-(U11-Pad6)" "Net-(J2-Pad1)"
+    "Net-(J2-Pad5)" "Net-(J2-Pad4)" "Net-(J2-Pad3)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
